@@ -14,6 +14,8 @@ species_count_DF <- as.data.frame(with(data, table(Species)))
 # order species by least to most abundant
 ggplot(data = species_count_DF) +
   geom_bar(aes(x = Freq, y = reorder(Species, -Freq)), stat = "identity") +
-  labs(y = "Species", x = "Abundance", title = "Species Abundance On and Off Trail")
+  labs(y = "Species", x = "Abundance", title = "Species Abundance On and Off Trail") + 
+  scale_x_log10() # make the counts logaarithmic so theyre more readable
+
 
 
