@@ -86,23 +86,43 @@ require("cowplot")
   ip <- subset(coralData, Region == "Indo-Pacific") # subset data from Indo-Pacific
 
 # take the linear regression of each region for Macroalgae_Cover: lm(y ~ x)
-  gbr_lm <- lm( gbr$Macroalgae_Cover ~ gbr$Population_Density_50km ) # great barrier reef
-  summary(gbr_lm)
+  gbr_m <- lm( gbr$Macroalgae_Cover ~ gbr$Population_Density_50km ) # great barrier reef
+  summary(gbr_m)
     # p-value = .02544
     # R-squared = .03329
  
-   fk_lm <- lm( fk$Macroalgae_Cover ~ fk$Population_Density_50km ) # florida keys
-   summary(fk_lm)
+   fk_m <- lm( fk$Macroalgae_Cover ~ fk$Population_Density_50km ) # florida keys
+   summary(fk_m)
     # p-value = .26
     # R-squared = .0008125
    
-   gc_lm <- lm( gc$Macroalgae_Cover ~ gc$Population_Density_50km ) # greater caribbean
-   summary(gc_lm)
+   gc_m <- lm( gc$Macroalgae_Cover ~ gc$Population_Density_50km ) # greater caribbean
+   summary(gc_m)
    # p-value = .262
    # R-squared = .002665
    
-   ip_lm <- lm( ip$Macroalgae_Cover ~ ip$Population_Density_50km ) # indo pacific
-   summary(ip_lm)
+   ip_m <- lm( ip$Macroalgae_Cover ~ ip$Population_Density_50km ) # indo pacific
+   summary(ip_m)
    # p-value = .06156
    # R-squared = .003777
 
+# take the linear regression of each region for Hard_Coral_Cover: lm(y ~ x)
+   gbr_c <- lm( gbr$Hard_Coral_Cover ~ gbr$Population_Density_50km ) # great barrier reef
+   summary(gbr_c)
+   # p-value = 0.002666
+   # R-squared = 0.05934
+   
+   fk_c <- lm( fk$Hard_Coral_Cover ~ fk$Population_Density_50km ) # florida keys
+   summary(fk_c)
+   # p-value = 0.06284
+   # R-squared = 0.02201
+   
+   gc_c <- lm( gc$Hard_Coral_Cover ~ gc$Population_Density_50km ) # greater caribbean
+   summary(gc_c)
+   # p-value = 0.02307
+   # R-squared = 0.01089
+   
+   ip_c <- lm( ip$Hard_Coral_Cover ~ ip$Population_Density_50km ) # indo pacific
+   summary(ip_c)
+   # p-value = 0.01342
+   # R-squared = 0.0004126
